@@ -1,20 +1,30 @@
-# Quantum European Option Pricing with PennyLane
+# European Options Pricing via Quantum Differential Machine Learning
 
-This project demonstrates how quantum computing techniques can be applied to predict the price of **European call and put options** using the **Black-Scholes model** in combination with the **PennyLane** quantum machine learning framework.
+This project replicates and extends the findings presented by T. Sakuma (2023), applying Quantum Machine Learning (QML) techniques to predict European call and put options prices.
 
-## What is this project?
+## Key Principles
 
-This project implements a hybrid classical-quantum workflow to price European options. While the **Black-Scholes model** provides an analytical method for option pricing, this project uses **PennyLane** to approximate the pricing function using quantum circuits, serving as a demonstration of quantum-enhanced financial modeling.
-
-## Key Concepts
-
-- **European Options**: Options that can only be exercised at expiration.
-- **Black-Scholes Model**: A mathematical model used to determine the theoretical price of options.
-- **Quantum Machine Learning (QML)**: Combining quantum computing with machine learning to potentially gain computational advantages.
-- **PennyLane**: A quantum machine learning library that integrates quantum computing with PyTorch, TensorFlow, and NumPy.
+- `Black-Scholes`: A foundational mathematical model for pricing derivatives, used here to generate synthetic training data
+- `European Options`: Financial contracts exercisable only at expiration, providing boundary conditions for the Black-Scholes partial differential equation.
+- `Differential Machine Learning`: A machine learning framework where the loss function is defined in terms of both the model output and its derivatives, enhancing accuracy in learning dynamic systems.
+- `Parameter Shift Rule`: A quantum computing technique enabling the exact evaluation of circuit gradients with respect to input parameters via controlled phase shifts.
+- `Angle Embedding`: A method of encoding continuous classical data into quantum states by applying rotation gates.
 
 ## Features
+ 
+- Synthetic data generation based on the Black-Scholes equation
+- 2-qubit quantum neural network trained with angle-embedded input data and tunable weights
+- Performance evaluation and analysis of the trained model
 
-- Calculates the exact option price using the Black-Scholes formula.
-- Approximates option prices using a parameterized quantum circuit.
-- Uses gradient-based optimization to train the quantum model.
+### Technologies Used
+- `Pennylane` by Xanadu
+- `ScipPy`
+### Papers Referenced
+- T Sakuma, *Quantum Differential Machine Learning*, 2023
+- BN Huge & A Savine, *Differential Machine Learning*, 2020
+- K Mitarai et al., *Quantum Circuit Learning*, 2019 
+- M Schuld et al., *Evaluating Quantum Gradients on Quantum Hardware*, 2018
+- F Vatan & C Williams, *Optimal Quantum Circuits for General Two Qubit Gates*, 2004
+### Authored by
+- `Arham Aneeq`, BTech MEMS, IIT Indore, 2028 Batch
+- `Hrishabh Mittal`, BTech CSE, IIT Indore, 2028 Batch
